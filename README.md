@@ -72,5 +72,8 @@ The goal of this project is to build a hybrid recommendation system that enhance
 - Generate final recommendations using a weighted blend of both methods.
 
 
----
+💬 Let's Collaborate!
+I’m Yash Agarwal, an aspiring Data Scientist, always eager to learn, share knowledge, and collaborate on impactful projects. If you have any ideas or want to work together, feel free to connect. Let’s build something amazing with data! 🚀
+
+This adds a personal touch while keeping it professional and approachable.
 
