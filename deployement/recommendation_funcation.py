@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import linear_kernel, cosine_similarity
 from dataset import dataset
 
 
-def content_based(product_name,dataset,top_n = 5):
+def content_based(product_name,dataset=dataset,top_n = 5):
     # Find the product_id for the given product_name
     product_id = dataset[dataset['product_name'] == product_name]['product_id'].iloc[0]
     # Find the index where the product_id matches
@@ -20,7 +20,7 @@ def content_based(product_name,dataset,top_n = 5):
     similar_indices = [i[0] for i in similarity_scores[1:top_n+1]]
     print(dataset.iloc[similar_indices][['product_id', 'product_name', 'category']])
 
-def collaborative_filtering(user_id,dataset,top_n = 5):
+def collaborative_filtering(user_id,dataset=dataset,top_n = 5):
     dataset['rating'] = pd.to_numeric(dataset['rating'], errors='coerce')
     # Prepare the data for user-item matrix
     filtered_data = dataset[['user_id', 'product_id', 'rating']].dropna(subset=['rating'])
@@ -36,7 +36,7 @@ def collaborative_filtering(user_id,dataset,top_n = 5):
     recommended_items = similar_users_items.sort_values(ascending=False).head(top_n).index
     print(dataset[dataset['product_id'].isin(recommended_items)][['product_id', 'product_name', 'category']])
 
-def hybird_recomend(user_id,product_name,dataset,top_n = 5):
+def hybird_recomend(user_id,product_name,dataset=dataset,top_n = 5):
     # Find the product_id for the given product_name
     product_id = dataset[dataset['product_name'] == product_name]['product_id'].iloc[0]
     # Find the index where the product_id matches
@@ -75,4 +75,4 @@ def hybird_recomend(user_id,product_name,dataset,top_n = 5):
 
 
 if __name__ == '__main__':
-    hybird_recomend('UID01','Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini (3 FT Pack of 1, Grey)',dataset)
+    hybird_recomend('UID01','Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini (3 FT Pack of 1, Grey)')
