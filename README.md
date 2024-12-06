@@ -1,5 +1,6 @@
 
-![Uploading image.png…]()
+![Recommendation System Illustration](https://github.com/YashAgarwal03/Recommendation-system/blob/main/image.webp)
+
 
 # Recommendation System Pipeline
 
