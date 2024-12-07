@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity, linear_kernel
 
 # Load dataset
-dataset_path = 'C:\experiment\dataset_for_app.csv'
+dataset_path = 'C:\Recommendation-system\deployement\dataset_for_app.csv'
 dataset = pd.read_csv(dataset_path)
 
 
